@@ -1,1 +1,1 @@
-![Image](Screenshot (863).png)
+![Image](https://github.com/ceciliatruong/cse15l-lab-report/blob/main/Screenshot%20(863).png?raw=true)
