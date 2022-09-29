@@ -1,1 +1,1 @@
-![Image](file:///C:/Users/justi/Pictures/Screenshots/Screenshot%20(863).png)
+![Image](C:\Users\justi\Documents\GitHub\cse15l-lab-report\Screenshot (863).png)
