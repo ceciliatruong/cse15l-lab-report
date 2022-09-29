@@ -1,1 +1,1 @@
-![Image](C:\Users\justi\Documents\GitHub\cse15l-lab-report\Screenshot (863).png)
+![Image](Screenshot (863).png)
