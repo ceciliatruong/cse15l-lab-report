@@ -1,10 +1,10 @@
 # Week 1 Lab Report
 ## Installing VSCode
 1. To install VSCode, visit this [download link](https://code.visualstudio.com/download). It should send you to this page below, and you should download whichever version that is compatible with your device. I'm currently working on a Windows system, so this tutorial will be catered toward that!
-![Image](/images/vscode%20download%20page.png)
+![Image](images\vscode-download-page.png)
 
 2. After installing the file to your computer, launch the file and it should proceed to setup VSCode on your device. I already have VSCode installed onto my laptop prior to this, so I cannot assist with this part. As for a reference, this is what my program looks like when I launch it.
-![Image](/images/my%20vscode%20home%20page.png)
+![Image](images\my-vscode-home-page.png)
 ## Remotely Connecting
 1. In order to make sure you can access your course-specific account, you need to install the OpenSSH client onto your device if you have a Windows.
     * First, open up your Settings on Windows and navigate to the Apps section.
@@ -20,7 +20,7 @@ ssh cs15lfa22bh@ieng6.ucsd.edu
 
 3. The terminal will prompt you to enter the password which should be the one that you chose when you reset your password. A successful login will look like this:
 
-    ![Image](/images/ssh%20login.jpg)
+    ![Image](images\ssh-login.jpg)
 
 ## Running Some Commands
 Here are some of the commands that I've ran in the terminal as well as some brief descriptions of what they do.
@@ -90,7 +90,7 @@ class WhereAmI {
 ```
 As a reference, this is what mine looks like:
 
-![Image](/images/whereami%20file.jpg)
+![Image](images\whereami-file.jpg)
 
 I've already tried compiling the program myself in the terminal, but the program essentially prints out information about the current computer and user information that I am using.
 
@@ -127,7 +127,7 @@ PS C:\Users\justi> ssh-keygen
 ```
 Once you enter this into the terminal, you should be prompted to enter a file to save the key, and you can press enter here to save it at the default location given. For a reference, this is what the process looked like on my end.
 
-![Image](/images/ssh%20keygen.jpg)
+![Image](images\ssh-keygen.jpg)
 
 Since I'm currently on a Windows, I've followed an additional step for doing `ssh-add`. After generating the SSH key, I entered the following commands into my terminal as an administrator:
 ```
