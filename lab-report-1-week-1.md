@@ -13,11 +13,14 @@
     ![Image](/images/openssh.png)
 2. Open up VSCode and launch the terminal by either going under the Terminal tab -> New Terminal or using the command (Ctrl + Shft + `). In the terminal, type in the following command with your course-specific account. I am using my course-specific account as an example below.
     * note that the only varying element of the format is cs15lfa22__@ieng6.ucsd.edu
+
 ```
 ssh cs15lfa22bh@ieng6.ucsd.edu
 ```
+
 3. The terminal will prompt you to enter the password which should be the one that you chose when you reset your password. A successful login will look like this:
-![Image](/images/ssh%20login.jpg)
+
+    ![Image](/images/ssh%20login.jpg)
 
 ## Running Some Commands
 Here are some of the commands that I've ran in the terminal as well as some brief descriptions of what they do.
@@ -86,7 +89,9 @@ class WhereAmI {
 }
 ```
 As a reference, this is what mine looks like:
+
 ![Image](/images/whereami%20file.jpg)
+
 I've already tried compiling the program myself in the terminal, but the program essentially prints out information about the current computer and user information that I am using.
 
 In the same terminal, I used the scp command to copy the file from the client (my personal computer) to the server (ieng6 computer). This change can be seen when we look into the directory on the server. The ```WhereAmI.java``` can now be run through the server terminal.
@@ -115,33 +120,15 @@ cs15lfa22bh
 /home/linux/ieng6/cs15lfa22/cs15lfa22bh
 ```
 ## Setting an SSH Key
+
 In order to make the logging in process quicker when trying to perform tasks with the remote computer, SSH keys can be used to minimize this. To begin setting an SSH key, enter the following command into your **client** terminal:
 ```
 PS C:\Users\justi> ssh-keygen
 ```
-Once you enter this into the terminal, you should be prompted to enter a file to save the key, and you can press enter here to save it at the default location given. 
-```
-Generating public/private rsa key pair.
-Enter file in which to save the key (C:\Users\justi/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in C:\Users\justi/.ssh/id_rsa.
-Your public key has been saved in C:\Users\justi/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:ZeOh7g06gAwcv0Zx8P/4hWxZ1WxUTqBCHmFp4BHXDdo justi@LAPTOP-GTF412KS
-The key's randomart image is:
-+---[RSA 3072]----+
-|   ..   +o*+.o.o+|
-| . ... . *o+..=o |
-|. o o.  ..O E. +.|
-|.. o  .  = +. .  |
-| o...  .S ..     |
-|  oo.  .+ +      |
-|  .  . .o* .     |
-|      .ooo.      |
-|      .....      |
-+----[SHA256]-----+
-```
+Once you enter this into the terminal, you should be prompted to enter a file to save the key, and you can press enter here to save it at the default location given. For a reference, this is what the process looked like on my end.
+
+![Image](/images/ssh%20keygen.jpg)
+
 Since I'm currently on a Windows, I've followed an additional step for doing `ssh-add`. After generating the SSH key, I entered the following commands into my terminal as an administrator:
 ```
 PS C:\WINDOWS\system32> Get-Service ssh-agent | Set-Service -StartupType Automatic
