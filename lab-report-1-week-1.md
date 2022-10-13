@@ -17,9 +17,13 @@
 ```
 ssh cs15lfa22bh@ieng6.ucsd.edu
 ```
-3. The terminal will prompt you to enter the password which should be the one that you chose when you reset your password.
+3. The terminal will prompt you to enter the password which should be the one that you chose when you reset your password. A successful login will look like this:
+![Image](images/ssh login.jpg)
 
-This is where I start having issues with the lab. Below, I have detailed the process of me trying to access my account which I still am unable to access. I have not been able to go to office hours yet due to classes conflicting this week.
+## Running Some Commands
+Going through some of the 
+
+
 
 ## Resetting my Password + Issues
 * This is me logging into the website.
