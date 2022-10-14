@@ -154,10 +154,14 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
         // assertEquals(-13, "orange".compareTo("ornge"));
     }
 ```
+
 - The **failure-inducing input** (the code of the test): `list1`{"ab", "donut", "orange"}, `list2`("a", "donut", "ornge")
 - The **symptom** (the failing test output): ``java.lang.OutOfMemoryError: Java heap space``
+
 ![image](images\merge-test-failed.jpg)
+
 - The **bug** (the code fix needed): When `index2 < list2.size()`, it enters the while loop and adds the element at `index2` of `list2` to the final list, but it never increments `index2`. Instead, it increments `index1` which has already been fully iterated through at this point of the code. Since `index2` is never incremented, the code never fully iterates through all of `list2` and will keep adding the same `index2` element of `list2` to the final copy indefinitely. A potential fix could look like this:
+
 ```
   static List<String> merge(List<String> list1, List<String> list2) {
     List<String> result = new ArrayList<>();
@@ -183,6 +187,7 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
     return result;
   }
 ```
+
 - When we try to run a test with `list2` having a 'lower' alphabetical value than `list1` as my test has done, we encounter the issue with the while loop as mentioned in my explanation of the bug. Since `index2` isn't properly incremented, the while loop condition for ending is never met and so the code itself never stops adding the element at `index2` of `list2`. This is why the test runs into the ``java.lang.OutOfMemoryError: Java heap space`` since the code is stuck in an infinite loop. 
 
 
