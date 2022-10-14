@@ -24,3 +24,5 @@ space
 [Lab Report 1](https://ceciliatruong.github.io/cse15l-lab-report/lab-report-1-week-0.html)
 
 [Lab Report 1.1](https://ceciliatruong.github.io/cse15l-lab-report/lab-report-1-week-1.html)
+
+[Lab Report 2](https://ceciliatruong.github.io/cse15l-lab-report/lab-report-2-week-3.html)
