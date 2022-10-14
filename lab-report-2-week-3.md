@@ -78,7 +78,7 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
 
 1. Beginning first with `ArrayExamples.java`, I will be looking at the `ReverseInPlace` method. As a reference, I've included the code snippets for `ReverseInPlace` along with the code I wrote for testing the method:
 
-` 
+```
 // reverseInPlace code
   static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
@@ -95,20 +95,20 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
     assertArrayEquals(new int[]{ 1, 2, 3, 4, 5 }, input1);
   }
 
-`
+```
 
 - The **failure-inducing input** (the code of the test): {5, 4, 3, 2, 1}
 - The **symptom** (the failing test output): ``expected [4] at index 3, got [2] instead`` ![image](images\reverseinplace-test-failed.jpg)
 - The **bug** (the code fix needed): Since the method directly enacts changes onto the input array and works from index 0 to the last index, the original integers of the first few indices aren't properly saved anywhere and are overwritten with the new elements by the time the program needs to refer back to it at the end. A possible fix could be like this:
 
-`
+```
   static void reverseInPlace(int[] arr) {
     int[] newArray = arr.clone();
     for(int i = 0; i < newArray.length; i += 1) {
       arr[i] = newArray[newArray.length - i - 1];
     }
   }
-`
+```
 
 - When the test runs with my input of {5, 4, 3, 2, 1}, the array goes through the for-loop. As a visualizer for what happens during the for-loop, I have written below the step as the program runs through each index:
     - start of program: {5, 4, 3, 2, 1}
@@ -123,7 +123,7 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
 
 2. The next file that I'm looking at is the `merge` method in `ListExamples.java`. As usual, I will be including below the code for the `merge` method as well as my test that failed.
 
-`
+```
 // merge code
   static List<String> merge(List<String> list1, List<String> list2) {
     List<String> result = new ArrayList<>();
@@ -157,7 +157,7 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
         assertEquals(Arrays.asList("a", "ab", "donut", "donut", "orange", "ornge"), ListExamples.merge(list1, list2));
         // assertEquals(-13, "orange".compareTo("ornge"));
     }
-`
+```
 
 - The **failure-inducing input** (the code of the test): `list1`{"ab", "donut", "orange"}, `list2`("a", "donut", "ornge")
 - The **symptom** (the failing test output): ``java.lang.OutOfMemoryError: Java heap space``
@@ -166,7 +166,7 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
 
 - The **bug** (the code fix needed): When `index2 < list2.size()`, it enters the while loop and adds the element at `index2` of `list2` to the final list, but it never increments `index2`. Instead, it increments `index1` which has already been fully iterated through at this point of the code. Since `index2` is never incremented, the code never fully iterates through all of `list2` and will keep adding the same `index2` element of `list2` to the final copy indefinitely. A potential fix could look like this:
 
-`
+```
   static List<String> merge(List<String> list1, List<String> list2) {
     List<String> result = new ArrayList<>();
     int index1 = 0, index2 = 0;
@@ -190,9 +190,9 @@ I will be going over the issues with files `ArrayExamples.java` and `ListExample
     }
     return result;
   }
-`
+```
 
-- When we try to run a test with `list2` having a 'lower' alphabetical value than `list1` as my test has done, we encounter the issue with the while loop as mentioned in my explanation of the bug. Since `index2` isn't properly incremented, the while loop condition for ending is never met and so the code itself never stops adding the element at `index2` of `list2`. This is why the test runs into the ``java.lang.OutOfMemoryError: Java heap space`` since the code is stuck in an infinite loop. 
+- When we try to run a test with `list2` having a 'lower' alphabetical value than `list1` as my test has done, we encounter the issue with the while loop as mentioned in my explanation of the bug. Since `index2` isn't properly incremented, the while loop condition for ending is never met and so the code itself never stops adding the element at `index2` of `list2`. This is why the test runs into the `java.lang.OutOfMemoryError: Java heap space` since the code is stuck in an infinite loop. 
 
 
 
