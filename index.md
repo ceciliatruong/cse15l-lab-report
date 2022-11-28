@@ -31,5 +31,5 @@ space
 
 [Lab Report 4](https://ceciliatruong.github.io/cse15l-lab-report/lab-report-4-week-7.html)
  
- 
+[Lab Report 5](https://ceciliatruong.github.io/cse15l-lab-report/lab-report-5-week-9.html)
 
